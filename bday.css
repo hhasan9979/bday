@@ -18,9 +18,12 @@ body {
 }
 
 canvas {
-    image-rendering: pixelated; /* Ensures a pixelated effect */
+    image-rendering: pixelated; /* Keeps the pixel art effect */
+    width: 400px;
+    height: 400px;
     border: 1px solid #ccc; /* Adds a border around the canvas */
 }
+
 
 #message {
     margin-top: 20px;
