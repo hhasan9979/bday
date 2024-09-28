@@ -1,4 +1,4 @@
-// Adjust the canvas size
+// Get the canvas and context
 const canvas = document.getElementById('flowerCanvas');
 const ctx = canvas.getContext('2d');
 
