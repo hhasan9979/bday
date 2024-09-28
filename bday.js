@@ -1,48 +1,48 @@
-// Get the canvas and context
+// Adjust the canvas size
 const canvas = document.getElementById('flowerCanvas');
 const ctx = canvas.getContext('2d');
 
-// Set canvas dimensions
-canvas.width = 100;
-canvas.height = 100;
+// Increase the size of the canvas
+canvas.width = 400;
+canvas.height = 400;
 
-// Flower blooming frames for purple tulip
+// Flower blooming frames for purple tulip (scaled up)
 const frames = [
     // Frame 1: Small purple tulip bud
     function drawFlowerFrame1() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "green";
-        ctx.fillRect(45, 50, 10, 30); // Stem
+        ctx.fillRect(180, 250, 40, 120); // Stem
         ctx.fillStyle = "purple";
-        ctx.fillRect(47, 45, 6, 8);  // Small tulip bud
+        ctx.fillRect(190, 230, 20, 40);  // Small tulip bud
     },
     // Frame 2: Slightly larger purple tulip bud
     function drawFlowerFrame2() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "green";
-        ctx.fillRect(45, 50, 10, 30); // Stem
+        ctx.fillRect(180, 250, 40, 120); // Stem
         ctx.fillStyle = "purple";
-        ctx.fillRect(45, 40, 10, 12); // Growing tulip bud
+        ctx.fillRect(170, 200, 60, 60);  // Growing tulip bud
     },
     // Frame 3: Fully bloomed purple tulip
     function drawFlowerFrame3() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "green";
-        ctx.fillRect(45, 50, 10, 30); // Stem
+        ctx.fillRect(180, 250, 40, 120); // Stem
         ctx.fillStyle = "purple";
-        ctx.fillRect(40, 30, 20, 20); // Fully bloomed tulip petals
+        ctx.fillRect(150, 150, 100, 100); // Fully bloomed tulip petals
         ctx.fillStyle = "yellow";
-        ctx.fillRect(47, 37, 6, 6);   // Tulip center
+        ctx.fillRect(190, 190, 20, 20);   // Tulip center
     },
     // Frame 4: Fully bloomed purple tulip with slight animation
     function drawFlowerFrame4() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "green";
-        ctx.fillRect(45, 50, 10, 30); // Stem
+        ctx.fillRect(180, 250, 40, 120); // Stem
         ctx.fillStyle = "purple";
-        ctx.fillRect(40, 30, 20, 20); // Fully bloomed tulip petals
+        ctx.fillRect(150, 150, 100, 100); // Fully bloomed tulip petals
         ctx.fillStyle = "yellow";
-        ctx.fillRect(45, 37, 10, 6);  // Animated tulip center
+        ctx.fillRect(180, 190, 40, 20);  // Animated tulip center
     }
 ];
 
