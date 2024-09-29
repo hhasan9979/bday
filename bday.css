@@ -1,4 +1,92 @@
-canvas {
-    image-rendering: pixelated; /* Keeps the pixelated art style */
-    border: 1px solid #ccc;
+/* Variables replaced with hex colors */
+body {
+  background-color: #ffcece;
+  text-align: center;
+  margin-top: 150px;  
+}
+
+div {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 190px;
+}
+
+div:before, div:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+div:before {
+  animation: before 2s steps(1) infinite;
+}
+
+@keyframes before {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+div:after {
+  opacity: 0;
+  animation: after 2s steps(1) infinite;
+}
+
+@keyframes after {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* First frame of the flower animation */
+.flower:before {
+  box-shadow:
+    40px 30px #b04b7e, 60px 30px #b04b7e, 80px 30px #b04b7e, 
+    30px 40px #88c73c, 40px 40px #b04b7e, 50px 40px #d772a5, 
+    60px 40px #88c73c, 70px 40px #d772a5, 80px 40px #b04b7e, 
+    90px 40px #88c73c, 20px 50px #88c73c, 30px 50px #b04b7e, 
+    40px 50px #d772a5, 50px 50px #88c73c, 60px 50px #88c73c, 
+    70px 50px #88c73c, 80px 50px #d772a5, 90px 50px #b04b7e, 
+    100px 50px #88c73c, 20px 60px #88c73c, 30px 60px #88c73c, 
+    40px 60px #88c73c, 50px 60px #88c73c, 60px 60px #88c73c, 
+    70px 60px #88c73c, 80px 60px #88c73c, 90px 60px #88c73c, 
+    100px 60px #88c73c, 20px 70px #88c73c, 30px 70px #88c73c, 
+    40px 70px #88c73c, 50px 70px #88c73c, 60px 70px #88c73c, 
+    70px 70px #88c73c, 80px 70px #88c73c, 90px 70px #88c73c, 
+    100px 70px #88c73c, 30px 80px #679a15, 40px 80px #88c73c, 
+    50px 80px #679a15, 60px 80px #88c73c, 70px 80px #679a15, 
+    80px 80px #88c73c, 90px 80px #679a15, 40px 90px #679a15, 
+    50px 90px #88c73c, 60px 90px #679a15, 70px 90px #88c73c, 
+    80px 90px #679a15, 50px 100px #679a15, 60px 100px #88c73c, 
+    70px 100px #679a15, 20px 110px #679a15, 60px 110px #88c73c, 
+    20px 120px #679a15, 30px 120px #679a15, 60px 120px #88c73c, 
+    100px 120px #679a15, 30px 130px #679a15, 40px 130px #679a15, 
+    60px 130px #88c73c, 90px 130px #679a15, 100px 130px #679a15, 
+    30px 140px #88c73c, 40px 140px #679a15, 60px 140px #88c73c, 
+    80px 140px #679a15, 90px 140px #679a15, 60px 150px #88c73c, 
+    50px 150px #679a15, 40px 150px #88c73c, 80px 150px #679a15, 
+    90px 150px #88c73c, 50px 160px #88c73c, 60px 160px #88c73c, 
+    70px 160px #88c73c, 80px 160px #88c73c, 60px 170px #679a15, 
+    60px 180px #679a15, 60px 190px #88c73c; 
+}
+
+/* Second frame of the flower animation */
+.flower:after {
+  box-shadow: 
+    30px 10px #d772a5, 50px 10px #d772a5, 70px 10px #d772a5, 
+    90px 10px #d772a5, 20px 20px #d772a5, 30px 20px #d772a5, 
+    40px 20px #d772a5, 50px 20px #d772a5, 60px 20px #d772a5, 
+    70px 20px #d772a5, 80px 20px #d772a5, 90px 20px #d772a5, 
+    100px 20px #d772a5, 10px 30px #d772a5, 20px 30px #d772a5, 
+    30px 30px #d772a5, 40px 30px #b04b7e, 50px 30px #d772a5, 
+    60px 30px #b04b7e, 70px 30px #d772a5, 80px 30px #b04b7e, 
+    90px 30px #d772a5, 100px 30px #d772a5, 110px 30px #d772a5, 
+    10px 40px #d772a5, 20px 40px #b04b7e, 30px 40px #d772a5, 
+    40px 40px #b04b7e, 50px 40px #d772a5, 60px 40px #b04b7e, 
+    70px 40px #d772a5, 80px 40px #b04b7e, 90px 40px #d772a5, 
+    100px 40px #b04b7e, 110px 40px #d772a5, 20px 50px #d772a5, 
+    30px 50px #b04b7e, 40px 50px #d772a5, 50px 50px #b04b7e, 
+    60px 50px #b04b7e, 70px 50px #b04b7e, 80px 50px #d772a5, 
+    90px 50px #b04b7e, 100px 50px #d772a5;
 }
