@@ -1,4 +1,4 @@
-/* Variables replaced with hex colors */
+/* Colors replaced with hex values */
 body {
   background-color: #ffcece;
   text-align: center;
@@ -68,7 +68,7 @@ div:after {
     50px 150px #679a15, 40px 150px #88c73c, 80px 150px #679a15, 
     90px 150px #88c73c, 50px 160px #88c73c, 60px 160px #88c73c, 
     70px 160px #88c73c, 80px 160px #88c73c, 60px 170px #679a15, 
-    60px 180px #679a15, 60px 190px #88c73c; 
+    60px 180px #679a15, 60px 190px #88c73c;
 }
 
 /* Second frame of the flower animation */
@@ -87,6 +87,4 @@ div:after {
     70px 40px #d772a5, 80px 40px #b04b7e, 90px 40px #d772a5, 
     100px 40px #b04b7e, 110px 40px #d772a5, 20px 50px #d772a5, 
     30px 50px #b04b7e, 40px 50px #d772a5, 50px 50px #b04b7e, 
-    60px 50px #b04b7e, 70px 50px #b04b7e, 80px 50px #d772a5, 
-    90px 50px #b04b7e, 100px 50px #d772a5;
-}
+    60px 50px #b04b7e, 70px 50px #b04b7e, 80px 50px #d772a
