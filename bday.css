@@ -1,90 +1,15 @@
-/* General body settings */
 body {
-    background-color: #87CEEB; /* Light blue sky background */
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    background-color: #eef;
 }
 
-.scene {
+.animation-container {
     position: relative;
-    width: 400px;
-    height: 200px;
-    background-color: #4CAF50; /* Grass */
-    border: 5px solid #333;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-/* Shared styles for boy and girl */
-.boy, .girl {
-    position: relative;
-    width: 50px;
-    height: 80px;
-}
-
-/* Girl styles */
-.girl:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: transparent;
-    box-shadow:
-        10px 0px #FF69B4, 20px 0px #FF69B4, 30px 0px #FF69B4, /* Head */
-        20px 10px #FF69B4, 10px 20px #FF69B4, 30px 20px #FF69B4, /* Body */
-        10px 30px #FFC0CB, 30px 30px #FFC0CB, /* Skirt */
-        20px 30px #FFC0CB, 10px 40px #FFC0CB, 30px 40px #FFC0CB; /* Legs */
-}
-
-/* Boy styles */
-.boy:before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: transparent;
-    box-shadow:
-        10px 0px #4682B4, 20px 0px #4682B4, 30px 0px #4682B4, /* Head */
-        20px 10px #4682B4, 10px 20px #4682B4, 30px 20px #4682B4, /* Body */
-        10px 30px #A9A9A9, 30px 30px #A9A9A9, /* Pants */
-        20px 30px #A9A9A9, 10px 40px #A9A9A9, 30px 40px #A9A9A9; /* Legs */
-}
-
-/* Flower styles */
-.flowers {
-    position: absolute;
-    bottom: 50px;
-    left: 100px;
-    width: 10px;
-    height: 10px;
-    background-color: transparent;
-    box-shadow:
-        0px 0px #FF0000, /* Flower bloom */
-        0px 10px #008000; /* Stem */
-}
-
-/* Animation for boy walking towards the girl */
-@keyframes walk {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(180px);
-    }
-}
-
-.boy {
-    animation: walk 5s ease-in-out forwards;
-}
-
-/* Flowers move with boy */
-.flowers {
-    animation: walk 5s ease-in-out forwards;
+    width: 512px;
+    height: 512px;
+    border: 1px solid #000;
 }
