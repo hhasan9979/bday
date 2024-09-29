@@ -1,109 +1,68 @@
-// Get the canvas and context
 const canvas = document.getElementById('flowerCanvas');
 const ctx = canvas.getContext('2d');
 
-// Increase the size of the canvas
+// Set the canvas dimensions
 canvas.width = 400;
 canvas.height = 400;
 
-// Flower blooming frames for a more realistic purple tulip
-const frames = [
-    // Frame 1: Small purple tulip bud (narrow at top, wider at bottom)
-    function drawFlowerFrame1() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Draw the stem
-        ctx.fillStyle = "green";
-        ctx.fillRect(190, 250, 20, 120); // Narrower stem
+// Function to draw the first flower frame (based on your first uploaded image)
+function drawFlowerFrame1() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Draw the tulip bud - narrower at the top
-        ctx.fillStyle = "purple";
-        ctx.beginPath();
-        ctx.moveTo(200, 230); // Starting point at the tip of the bud
-        ctx.lineTo(180, 260); // Left side slant
-        ctx.lineTo(220, 260); // Right side slant
-        ctx.closePath(); // Complete triangle-like bud
-        ctx.fill();
-    },
-    // Frame 2: Larger tulip bud starting to bloom (still pointed at top, wider bottom)
-    function drawFlowerFrame2() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Stem
+    ctx.fillStyle = "green";
+    ctx.fillRect(190, 250, 20, 60); // main stem
+    ctx.fillRect(170, 290, 40, 20); // base of the flower
 
-        // Draw the stem
-        ctx.fillStyle = "green";
-        ctx.fillRect(190, 250, 20, 120); // Stem
+    // Leaves
+    ctx.fillRect(160, 300, 20, 20); // left leaf
+    ctx.fillRect(220, 300, 20, 20); // right leaf
 
-        // Draw the tulip bud - starting to bloom
-        ctx.fillStyle = "purple";
-        ctx.beginPath();
-        ctx.moveTo(200, 210); // Top tip of the bud
-        ctx.lineTo(170, 260); // Left petal slanting down
-        ctx.lineTo(230, 260); // Right petal slanting down
-        ctx.lineTo(200, 260); // Bottom flat part
-        ctx.closePath();
-        ctx.fill();
-    },
-    // Frame 3: Fully bloomed tulip (wide at bottom, rounded at top)
-    function drawFlowerFrame3() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Flower Base
+    ctx.fillStyle = "green";
+    ctx.fillRect(180, 230, 40, 20);
 
-        // Draw the stem
-        ctx.fillStyle = "green";
-        ctx.fillRect(190, 250, 20, 120); // Stem
+    // Petals
+    ctx.fillStyle = "purple";
+    ctx.fillRect(170, 210, 60, 20);
+    ctx.fillRect(180, 190, 40, 20);
+}
 
-        // Draw the fully bloomed tulip with rounded petals
-        ctx.fillStyle = "purple";
-        ctx.beginPath();
-        ctx.moveTo(200, 180); // Top middle of the tulip
-        ctx.bezierCurveTo(160, 220, 160, 260, 200, 260); // Left curve
-        ctx.bezierCurveTo(240, 220, 240, 260, 200, 260); // Right curve
-        ctx.fill();
-    },
-    // Frame 4: Slight animated bloom with a yellow center
-    function drawFlowerFrame4() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+// Function to draw the second flower frame (based on your second uploaded image)
+function drawFlowerFrame2() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Draw the stem
-        ctx.fillStyle = "green";
-        ctx.fillRect(190, 250, 20, 120); // Stem
+    // Stem
+    ctx.fillStyle = "green";
+    ctx.fillRect(190, 250, 20, 60); // main stem
+    ctx.fillRect(170, 290, 40, 20); // base of the flower
 
-        // Draw the fully bloomed tulip with a yellow center
-        ctx.fillStyle = "purple";
-        ctx.beginPath();
-        ctx.moveTo(200, 180); // Top middle of the tulip
-        ctx.bezierCurveTo(160, 220, 160, 260, 200, 260); // Left curve
-        ctx.bezierCurveTo(240, 220, 240, 260, 200, 260); // Right curve
-        ctx.fill();
+    // Leaves
+    ctx.fillRect(160, 300, 20, 20); // left leaf
+    ctx.fillRect(220, 300, 20, 20); // right leaf
 
-        // Yellow center to represent the flower's interior
-        ctx.fillStyle = "yellow";
-        ctx.beginPath();
-        ctx.arc(200, 230, 10, 0, 2 * Math.PI); // Circular center
-        ctx.fill();
-    }
-];
+    // Flower Base
+    ctx.fillStyle = "green";
+    ctx.fillRect(180, 230, 40, 30);
+
+    // Petals
+    ctx.fillStyle = "purple";
+    ctx.fillRect(180, 200, 40, 30);
+    ctx.fillRect(190, 180, 20, 20);
+}
 
 let currentFrame = 0;
 
-// Function to animate the flower
+// Function to animate the flower by switching between the two frames
 function animateFlower() {
-    frames[currentFrame]();
-    currentFrame = (currentFrame + 1) % frames.length;
+    if (currentFrame === 0) {
+        drawFlowerFrame1();
+        currentFrame = 1;
+    } else {
+        drawFlowerFrame2();
+        currentFrame = 0;
+    }
 }
 
-// Animate the flower every 500ms to show the blooming effect
+// Animate the flower every 500ms (half a second)
 setInterval(animateFlower, 500);
-
-// Transitioning messages
-const messages = ["Happy Birthday!", "Wishing you all the best!", "Have a fantastic day!"];
-let currentMessageIndex = 0;
-const messageDiv = document.getElementById('message');
-
-// Function to change the message every 5 seconds
-function changeMessage() {
-    messageDiv.innerText = messages[currentMessageIndex];
-    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-}
-
-// Set message change interval
-setInterval(changeMessage, 5000);
