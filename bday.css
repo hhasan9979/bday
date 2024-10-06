@@ -191,3 +191,11 @@ p {
   font-size: 0.8em;
   line-height: 2em;
 }
+.video-container {
+    display: none; /* Hide the video by default */
+}
+
+video {
+    border: 2px solid #333;
+    border-radius: 8px;
+}
